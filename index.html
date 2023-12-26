@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientcard</title>
+    <!-- style -->
+    <style>
+        .fixed-card {
+            box-shadow: rgb(182 191 180) 0px -50px 36px -28px inset;
+            /* box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset; */
+            position: fixed;
+            bottom: 20px;
+            right: 4px;
+            background-color: rgb(255 255 255 / 93%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgb(49 165 14 / 20%);
+            padding: 8px 8px 5px 8px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            transition: transform 0.20s ease-in-out;
+            z-index: 9999;
+            display: -webkit-inline-box;
+            -webkit-box-align: center;
+            gap: 11px;
+        }
+
+        .card-title {
+            font-size: 17px;
+            /* font-size: 18px; */
+            /* font-weight: 700; */
+            /* margin-bottom: 1px; */
+            /* color: #ffffff; */
+            font-weight: 400;
+            font-family: 'circular' !IMPORTANT;
+            margin-bottom: 0px
+        }
+
+        .card-time {
+            font-size: 15px;
+            color: #000;
+            font-family: 'circular';
+        }
+
+        .card-title-head {
+            font-size: 16px;
+            font-family: sans-serif;
+            font-weight: 600;
+        }
+
+        .pro-logo {
+            width: 60px;
+        }
+
+        @media screen and (max-width: 767px) {
+            .fixed-card {
+                box-shadow: rgb(182 191 180) 0px -50px 36px -28px inset;
+                /* box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset; */
+                position: fixed;
+                bottom: 30px;
+                background-color: rgb(255 255 255 / 93%);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgb(49 165 14 / 20%);
+                padding: 6px 5px 4px 6px;
+                padding: 7px 8px 5px 8px;
+                border-radius: 12px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                transition: transform 50s ease-in-out;
+                z-index: 9999;
+                display: -webkit-inline-box;
+                -webkit-box-align: center;
+                gap: 11px;
+                right: unset;
+                left: 10px;
+                transform: translateX(-200%);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .fixed-card.animate-left {
+                transform: translateX(0);
+            }
+
+            .card-title-head {
+                font-size: 12px;
+                font-family: sans-serif;
+                font-weight: 600;
+            }
+
+            .card-title {
+                font-size: 10px;
+                /* font-size: 18px; */
+                /* font-weight: 700; */
+                /* margin-bottom: 1px; */
+                /* color: #ffffff; */
+                font-weight: 400;
+                font-family: 'circular' !IMPORTANT;
+                margin-bottom: 0px;
+            }
+
+            .card-time {
+                font-size: 9px;
+                color: #000;
+                font-family: 'circular';
+            }
+
+            .pro-logo {
+                width: 40px;
+            }
+
+            body:not(.rtl) .elementor-13325 .elementor-element.elementor-element-cd659c7 {
+                left: 4%;
+                bottom: 14%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fixed-card" style="transform: translateX(0px);">
+        <div class="w-100">
+            <img decoding="async" class="pro-logo"
+                src="https://www.developerbazaar.com/wp-content/uploads/2023/12/profile-status-removebg-preview-min.png">
+        </div>
+        <div class="">
+            <div class="card-title-head" id="clientinfo"> Inquiry moments captured live!</div>
+            <div class="card-title" id="clientName">Client Name : James Christensen</div>
+            <div class="card-time" id="timeAgo">Time: 25 min ago</div>
+        </div>
+    </div>
+
+
+    <!-- script -->
+    <script>
+        // Array of client names
+        const names = [
+            "Matthew Humphreys",
+            "Pragati Sharma",
+            "Vipra Arolkar",
+            "James Christensen",
+            "Ajay Karthik Rayadurgam",
+            "Shaan Rai",
+            "Vipra Arolkar",
+            "Tejas Singh",
+            "Ashish",
+            "Dmitri Mirakyan",
+            "Anand Singh",
+            "Tejaswi Singh",
+            "Dhaval Bhatt",
+            "Pallavi Kanmadikar",
+            "Mr. Chris Seymour",
+            "Aadhunik Packers and Movers",
+            "Rajat Katarne",
+            "Bhavik Savaliya",
+            "Pallavi Kanmadikar",
+            "Philip Phyde",
+            "Kush Patel",
+            "Shaan Rai",
+            "Sebastian Gordon",
+            "~d g holdaway",
+            "James Christensen",
+            "Brian Delaet, Maki Delaet",
+            "Abdullah Albanwan",
+            "Ankit",
+            "Carlos",
+            "Vivek",
+            "Philip Phyde",
+            "AIS TechnoLabs",
+            "Tiombé",
+            "Christian",
+            "Rajat Katarne",
+            "Matè Hollos",
+            "Rebecca Schoneveld",
+            "Mike Barnwell",
+            "Lee Furneaux",
+            "Sanjeev Jaiswal",
+            "Mike Barnwell",
+            "Husam",
+            "Ryan Hughes",
+            "Daniel Garcia",
+            "Babajide",
+            "David Youngblood",
+            "Nateese Jones",
+            "Gary Kirwan, Thomas",
+            "Teresa Galido",
+            "Dmytro Tsepelev",
+            "Maiken Passke",
+            "Mark Badgerow",
+            "Emily",
+            "Jyima ofori-Atta",
+            "Eric Westendorf",
+            "Michael Fitzpatrick",
+            "Carl Peter Lehmann",
+            "Naoh",
+            "Ankush",
+            "CManigandan",
+            "Carolin Wong",
+            "Marie Buhot-Launay",
+            "Will Wong",
+            "Mahmood Ashoori",
+            "Mohadembaka",
+            "Ritesh Padhiyar",
+            "Brian Delaet",
+            "Abdullah Albanwan",
+            "Lorri Guimond",
+            "Ashish Singh Baghel",
+            "Warren Hopper",
+            "Sama faizal",
+            "Dan Engerger",
+            "Juan",
+            "Robert Ryon",
+            "Derrick Kitiyo",
+            "Kevin König",
+            "Tasha",
+            "Callum Henderson"
+        ];
+        function shuffleArray(array) {
+            let currentIndex = array.length,
+                temporaryValue, randomIndex;
+
+            while (currentIndex !== 0) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+            }
+
+            return array;
+        }
+
+        function updateClientWithAnimation() {
+            const shuffledNames = shuffleArray(names);
+            const randomName = shuffledNames[Math.floor(Math.random() * shuffledNames.length)];
+            const card = document.querySelector('.fixed-card');
+
+            if (window.innerWidth <= 767) {
+                card.classList.add('animate-left');
+            }
+
+            card.style.transform = 'translateX(200%)';
+
+            setTimeout(() => {
+                document.getElementById('clientName').innerHTML = `Client Name : ${randomName}`;
+
+                const randomTime = Math.floor(Math.random() * 60);
+                document.getElementById('timeAgo').innerHTML = `Time: ${randomTime} min ago`;
+
+                card.style.transform = 'translateX(0)';
+
+                setTimeout(() => {
+                    card.style.transform = 'translateX(200%)';
+                }, 3000);
+            }, 300);
+
+            setTimeout(() => {
+                const newRandomName = shuffledNames[Math.floor(Math.random() * shuffledNames.length)];
+                document.getElementById('clientName').innerHTML = `Client Name : ${newRandomName}`;
+
+                const newRandomTime = Math.floor(Math.random() * 60);
+                document.getElementById('timeAgo').innerHTML = `Time: ${newRandomTime} min ago`;
+
+                card.style.transform = 'translateX(0)';
+            }, 3300);
+        }
+
+        setInterval(updateClientWithAnimation, 30000);
+        updateClientWithAnimation();
+    </script>
+
+</body>
+
+</html>
